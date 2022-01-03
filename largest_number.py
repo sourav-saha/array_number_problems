@@ -1,7 +1,7 @@
 ## Leetcode problem link:
 ## https://leetcode.com/problems/largest-number/
 
-from functools import cmp_to_key
+from functools import cmp_to_key 
 
 def compare(s1, s2):
     str1 = str(s1) + str(s2)
@@ -10,17 +10,19 @@ def compare(s1, s2):
         return -1
     else:
         return 1
-    
 
-class Solution:
-    def largestNumber(self, nums: List[int]) -> str:
-        #special case if the array has all 0s
-        if nums.count(0) == len(nums):
-            return "0"
-        
-        res = ""
-        a = sorted(nums, key=cmp_to_key(compare))
-        for item in a:
-            res += str(item)
+def find_largest_no(a, n):
+    res = ""
+    b = sorted(a, key=cmp_to_key(compare))
+    #print(b)
+    for item in b:
+        res += str(item)
+    return res
 
-        return res
+if __name__ == "__main__":
+    T = int(input().strip())
+    for ti in range(T):
+        n = int(input().strip())
+        a = list(map(int, input().strip().split(' ')))
+        #find_largest_no(a, n)
+        print(find_largest_no(a, n))
