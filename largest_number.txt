@@ -1,0 +1,23 @@
+Problem statement:
+
+Given a list of non-negative integers nums, arrange them such that they form the largest number and return it.
+
+Since the result may be very large, so you need to return a string instead of an integer.
+
+
+Example 1:
+
+Input: nums = [10,2]
+Output: "210"
+Example 2:
+
+Input: nums = [3,30,34,5,9]
+Output: "9534330"
+
+In this problem, we can't simply compare two integers from the array and sort them, e,g, for numbers 9, 90 if we do simple compare then the number will be 
+909 (as 90 > 9) but we should be doing 990 (9 comes first and then 90) in this case as 990 > 909. 
+
+So we need custom compare function where we convert two integers into str and concatenate both of them to generate bott the final numbers like 909 and 990,
+and then do string compare between 990 and 909 and then sort the array as per the result.
+
+In python we will use a speacial module from functools import cmp_to_key to achieve this, pls see the .py file of the same name for code.
