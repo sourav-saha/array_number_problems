@@ -21,3 +21,8 @@ So we need custom compare function where we convert two integers into str and co
 and then do string compare between 990 and 909 and then sort the array as per the result.
 
 In python we will use a speacial module from functools import cmp_to_key to achieve this, pls see the .py file of the same name for code.
+
+
+For custom sorting ways check this - 
+https://mentorpick.com/blog/view/5c79d398d55ee8cf78301cd6
+
